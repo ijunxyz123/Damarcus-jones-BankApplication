@@ -45,7 +45,7 @@ public class Branch implements IBranch {
         else return false;
     }
 
-    public Customer findCustomer(String customerName){
+    private Customer findCustomer(String customerName){
 
         for(Customer customer: this.customers){
             if(customer.getName().equalsIgnoreCase(customerName)){

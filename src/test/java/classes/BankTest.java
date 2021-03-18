@@ -6,9 +6,11 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class BankTest {
+private Bank bank;
 
     @Before
     public void setUp() throws Exception {
+        bank = new Bank("TestBank");
     }
 
     @Test

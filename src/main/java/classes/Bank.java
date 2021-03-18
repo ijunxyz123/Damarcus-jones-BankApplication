@@ -8,9 +8,9 @@ public class Bank implements IBank {
     private String name;
     private ArrayList<Branch> branches;
 
-    public Bank(String name, ArrayList<Branch> branches) {
+    public Bank(String name) {
         this.name = name;
-        this.branches = branches;
+        this.branches = new ArrayList <> ();
     }
 
     @Override
