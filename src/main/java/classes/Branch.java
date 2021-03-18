@@ -8,9 +8,9 @@ public class Branch implements IBranch {
     private String name;
     private ArrayList<Customer> customers;
 
-    public Branch (String name, ArrayList<Customer> customers) {
+    public Branch (String name) {
         this.name = name;
-        this.customers = customers;
+        this.customers = new ArrayList<>();
     }
 
     @Override
@@ -36,12 +36,23 @@ public class Branch implements IBranch {
     }
 
     @Override
-    public boolean addCustomerTransaction(String customerName,double transaction){
-        return false;
+    public boolean addCustomerTransaction(String customerName, double transaction) {
+
+        if((findCustomer(customerName) != null) && transaction > 0){
+            findCustomer(customerName).addTransaction(transaction);
+            return true;
+        }
+        else return false;
     }
 
-    @Override
     public Customer findCustomer(String customerName){
+
+        for(Customer customer: this.customers){
+            if(customer.getName().equalsIgnoreCase(customerName)){
+                return customer;
+            }
+        }
         return null;
     }
 }
+
