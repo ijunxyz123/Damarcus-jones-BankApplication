@@ -28,7 +28,7 @@ public class Bank implements IBank {
         if(findBranch(branchName) != null){
             return findBranch(branchName).newCustomer(customerName, initialTransaction);
         }
-        else return false;
+         return false;
     }
 
     @Override
@@ -53,7 +53,7 @@ public boolean listCustomers(String branchName, boolean printTransactions) {
                 }
             }
         }
-        else for(Customer customer: branch.getCustomers()) {
+         for(Customer customer: branch.getCustomers()) {
             System.out.printf("\nCustomer: %s[%d]", customer.getName(), branch.getCustomers().indexOf(customer)+1);
         }
         return true;
